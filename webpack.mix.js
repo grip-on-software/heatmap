@@ -1,13 +1,6 @@
 let mix = require('laravel-mix');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
 
-mix.js('lib/index.js', 'public/bundle.js');
-
-mix.webpackConfig({
-   plugins: [
-       new LiveReloadPlugin()
-   ]
-});
+mix.setPublicPath('public/').js('lib/index.js', 'public/bundle.js');
 
 // Full API
 // mix.js(src, output);

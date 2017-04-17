@@ -7,7 +7,9 @@
     "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "devDependencies": {
-    "laravel-mix": "^0.10.0",
-    "webpack-livereload-plugin": "^0.11.0"
+    "laravel-mix": "^0.10.0"
+  },
+  "dependencies": {
+    "d3": "^4.8.0"
   }
 }

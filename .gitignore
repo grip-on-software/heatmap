@@ -1,2 +1,6 @@
 bundle.js
+bundle.js.map
 node_modules
+data/
+public/data
+hot
