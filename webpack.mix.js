@@ -1,7 +1,6 @@
 let mix = require('laravel-mix');
 
 mix.setPublicPath('public/')
-    .copyDirectory('data/', 'public/data/')
     .js('lib/index.js', 'public/bundle.js');
 
 // Full API
