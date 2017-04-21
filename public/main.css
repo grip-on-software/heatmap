@@ -16,8 +16,13 @@ body {
     text-anchor: middle;   
 }
 
-#calendar rect {
+#calendar .day-group {
     cursor: pointer;
+}
+
+.temperature-bar {
+    filter: brightness(90%);
+    stroke-dasharray: 0,20,40; /* don't show the rect stroke on the top */
 }
 
 /*
