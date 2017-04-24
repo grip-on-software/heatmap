@@ -2,6 +2,13 @@ body {
     font-family: sans-serif;
 }
 
+h2 {
+    position: fixed;
+}
+
+svg {
+    margin-top: 60px;
+}
 .project {
     width: 100%;
     height: 300px;
