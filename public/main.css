@@ -10,13 +10,38 @@ svg {
     margin-top: 60px;
 }
 
-#projectPicker {
+#projectPicker, #dataPicker {
     float: left;
 }
 
-#dataPicker {
+#options, #weatherToggle {
     float: right;
 }
+
+#dataPicker {
+    margin-right: 20px;
+}
+
+/*
+ * Data option buttons
+ */
+.data-button {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 7px;
+}
+.data-button:not(:first-child) { border-left: none; }
+.data-button:first-child { border-radius: 3px 0 0 3px; }
+.data-button:last-child { border-radius: 0 3px 3px 0; }
+.data-button:only-child { border-radius: 3px; }
+
+.data-button:hover { background: #ccc; }
+
+.data-button.active { background: #ddd; }
+
+/*
+ * SVG
+ */
 
 .project {
     width: 100%;
