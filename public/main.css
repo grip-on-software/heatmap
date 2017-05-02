@@ -42,9 +42,10 @@ svg {
  * Data option buttons
  */
 .data-button {
+    min-width: 50px;
+    padding: 7px;
     background: #fff;
     border: 1px solid #ddd;
-    padding: 7px;
 }
 .data-button:not(:first-child) { border-left: none; }
 .data-button:first-child { border-radius: 3px 0 0 3px; }
