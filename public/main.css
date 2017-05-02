@@ -4,6 +4,9 @@ body {
 
 h2 {
     position: fixed;
+    background: #fff;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 svg {
@@ -35,7 +38,7 @@ svg {
 .data-button:last-child { border-radius: 0 3px 3px 0; }
 .data-button:only-child { border-radius: 3px; }
 
-.data-button:hover { background: #ccc; }
+.data-button:not(:disabled):hover { background: #ccc; }
 
 .data-button.active { background: #ddd; }
 
@@ -75,7 +78,7 @@ svg {
     border: 3px solid #e7e7e7;
     border-radius: 1rem;
     padding: .2rem 1rem;
-    width: 12rem;
+    width: 15rem;
     line-height: 1.4rem;
 }
 
