@@ -38,6 +38,10 @@ svg {
     border-bottom: 1px solid #000;
 }
 
+.file-change-repo {
+    font-weight: 600;
+}
+
 /*
  * Data option buttons
  */
