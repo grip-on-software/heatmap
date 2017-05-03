@@ -1,9 +1,31 @@
 body {
+    margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
 
+.container {
+    margin: 8px;
+}
+
+#header {
+    padding: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#header h1 {
+    margin: 7px;
+}
+
+#header h1 span {
+    font-weight: 400;
+    font-size: 0.5em;
+    color: #aaa;
+}
+
 h2 {
-    position: fixed;
+    position: sticky;
+    left: 0;
     background: #fff;
     padding: 5px;
     border-radius: 3px;
@@ -13,10 +35,6 @@ h2 {
     margin-top: 60px;
     padding: 5px;
     color: #aaa;
-}
-
-svg {
-    margin-top: 60px;
 }
 
 #projectPicker, #dataPicker {
@@ -79,7 +97,9 @@ svg {
 }
 
 .month-heading {
-    text-anchor: middle;   
+    text-anchor: middle;
+    font-weight: 300;
+    font-size: 0.8rem;
 }
 
 #calendar .day-group {
