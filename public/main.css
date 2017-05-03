@@ -40,6 +40,10 @@ svg {
 
 .file-change-repo {
     font-weight: 600;
+    cursor: pointer;
+}
+.file-change-repo:hover {
+    color: #aaa;
 }
 
 /*
