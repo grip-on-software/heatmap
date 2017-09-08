@@ -12,7 +12,8 @@
   "dependencies": {
     "axios": "^0.16.1",
     "d3": "^4.8.0",
-    "moment": "^2.18.1",
-    "javascript-natural-sort": "^0.7.1"
+    "dragscroll": "0.0.8",
+    "javascript-natural-sort": "^0.7.1",
+    "moment": "^2.18.1"
   }
 }
