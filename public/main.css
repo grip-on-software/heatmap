@@ -66,6 +66,11 @@ h2 {
     color: #aaa;
 }
 
+.file-change-repo img {
+	vertical-align: bottom;
+	padding-left: 8px;
+}
+
 /*
  * Data option buttons
  */
