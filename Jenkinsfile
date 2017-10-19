@@ -1,12 +1,16 @@
 pipeline {
     agent { label 'docker' }
 
+    environment {
+        GITLAB_TOKEN = credentials('heatmap-gitlab-token')
+    }
+
     options {
         gitLabConnection('gitlab')
         buildDiscarder(logRotator(numToKeepStr: '10'))
     }
     triggers {
-        gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
+        gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All', secretToken: env.GITLAB_TOKEN)
         cron('H 8-18 * * 1-5')
     }
 
@@ -17,6 +21,9 @@ pipeline {
         }
         failure {
             updateGitlabCommitStatus name: env.JOB_NAME, state: 'failed'
+        }
+        aborted {
+            updateGitlabCommitStatus name: env.JOB_NAME, state: 'canceled'
         }
     }
 
@@ -42,7 +49,7 @@ pipeline {
             }
             steps {
                 withCredentials([file(credentialsId: 'data-analysis-config', variable: 'ANALYSIS_CONFIGURATION')]) {
-                    sh '/bin/bash -c "rm -rf $PWD/output && mkdir $PWD/output && cd /home/docker && cp $ANALYSIS_CONFIGURATION config.yml && Rscript report.r --report \'^commit_volume$|^developers$|^long_waiting_commits$\' --log INFO --output $PWD/output && Rscript weather.r --output $PWD/output"'
+                    sh '/bin/bash -c "rm -rf $PWD/output && mkdir $PWD/output && cd /home/docker && Rscript report.r --report \'^commit_volume$|^developers$|^long_waiting_commits$\' --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output && Rscript weather.r --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output"'
                 }
             }
         }
