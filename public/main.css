@@ -109,6 +109,16 @@ h2 {
     font-size: 0.8rem;
 }
 
+.weekday-heading {
+    text-anchor: middle;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.is-hidden {
+	display: none;
+}
+
 #calendar .day-group {
     cursor: pointer;
 }
