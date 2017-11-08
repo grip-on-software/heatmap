@@ -11,13 +11,12 @@ pipeline {
     }
     triggers {
         gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All', secretToken: env.GITLAB_TOKEN)
-        cron('H 8-18 * * 1-5')
+        cron(env.VISUALIZATION_CRON)
     }
 
     post {
         success {
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'public', reportFiles: 'index.html', reportName: 'Visualization', reportTitles: ''])
-            updateGitlabCommitStatus name: env.JOB_NAME, state: 'success'
         }
         failure {
             updateGitlabCommitStatus name: env.JOB_NAME, state: 'failed'
@@ -28,6 +27,16 @@ pipeline {
     }
 
     stages {
+        stage('Start') {
+            when {
+                expression {
+                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                }
+            }
+            steps {
+                updateGitlabCommitStatus name: env.JOB_NAME, state: 'running'
+            }
+        }
         stage('Build') {
             steps {
                 updateGitlabCommitStatus name: env.JOB_NAME, state: 'running'
@@ -66,6 +75,16 @@ pipeline {
                 sh 'rm -rf node_modules/'
                 sh 'ln -s /usr/src/app/node_modules .'
                 sh 'npm run production -- --context=$PWD'
+            }
+        }
+        stage('Status') {
+            when {
+                expression {
+                    currentBuild.rawBuild.getCause(hudson.triggers.TimerTrigger$TimerTriggerCause) == null
+                }
+            }
+            steps {
+                updateGitlabCommitStatus name: env.JOB_NAME, state: 'success'
             }
         }
     }
