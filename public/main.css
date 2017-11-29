@@ -79,6 +79,7 @@ h2 {
     padding: 7px;
     background: #fff;
     border: 1px solid #ddd;
+	cursor: pointer;
 }
 .data-button:not(:first-child) { border-left: none; }
 .data-button:first-child { border-radius: 3px 0 0 3px; }
