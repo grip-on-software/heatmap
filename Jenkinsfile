@@ -39,7 +39,6 @@ pipeline {
         }
         stage('Build') {
             steps {
-                updateGitlabCommitStatus name: env.JOB_NAME, state: 'running'
                 sh 'docker build -t $DOCKER_REGISTRY/gros-heatmap .'
             }
         }
