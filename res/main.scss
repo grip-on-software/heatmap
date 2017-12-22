@@ -25,26 +25,10 @@ body {
     color: #aaa;
 }
 
-h2 {
-    position: sticky;
-    left: 0;
-    background: #fff;
-    padding: 5px;
-    border-radius: 3px;
-}
-
 .no-data {
     margin-top: 60px;
     padding: 5px;
     color: #aaa;
-}
-
-#projectPicker, #dataPicker {
-    float: left;
-}
-
-#options, #weatherToggle {
-    float: right;
 }
 
 #dataPicker {
