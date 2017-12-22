@@ -4,5 +4,6 @@ node_modules
 data/
 output/
 public/data
+public/main.css
 public/mix-manifest.json
 public/hot
