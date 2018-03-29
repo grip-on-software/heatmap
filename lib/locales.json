@@ -1,0 +1,50 @@
+{
+    "en": {
+        "language": "English",
+        "date": "%m/%d/%Y",
+        "shortDays": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+        "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "data-title": {
+            "total-commits": "Commits total",
+            "commits-per-developer": "Commits per developer",
+            "file-changes": "File changes"
+        },
+        "data-description": {
+            "total-commits": "A heatmap of the total commit volume over time, as in GitLab or GitHub.",
+            "commits-per-developer": "A heatmap of the number of commits divided by the number of developers that day.",
+            "file-changes": "A heatmap of the number of files that were changed after a month of no activity for that file."
+        },
+        "messages": {
+            "title": "Heatmap %s",
+            "subtitle": "Event volume over time",
+            "weather-toggle": "Temperature",
+            "no-data": "No data found for this project.",
+            "file-change-header": "Files changed after a long time on %s (%s) for %s",
+            "file-change": "%s, %s days later"
+        }
+    },
+    "nl": {
+        "language": "Nederlands",
+        "date": "%d-%m-%Y",
+        "shortDays": ["zo", "ma", "di", "wo", "do", "vr", "za"],
+        "months": ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"],
+        "data-title": {
+            "total-commits": "Totaal commits",
+            "commits-per-developer": "Commits per developer",
+            "file-changes": "Bestandswijzigingen"
+        },
+        "data-description": {
+            "total-commits": "Een heatmap van het totaal aantal commits over tijd, zoals bij GitLab of GitHub.",
+            "commits-per-developer": "Een heatmap van het aantal commits, gedeeld door het aantal developers van die dag.",
+            "file-changes": "Een heatmap van het aantal bestanden die na meer dan een maand weer gewijzigd zijn."
+        },
+        "messages": {
+            "title": "Heatmap %s",
+            "subtitle": "Aantal gebeurtenissen over tijd",
+            "weather-toggle": "Temperatuur",
+            "no-data": "Geen data gevonden voor dit project.",
+            "file-change-header": "Na lange tijd veranderde bestanden op %s (%s) voor %s",
+            "file-change": "%s, %s dagen later"
+        }
+    }
+}
