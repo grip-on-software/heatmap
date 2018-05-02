@@ -20,7 +20,11 @@
             "weather-toggle": "Temperature",
             "no-data": "No data found for this project.",
             "file-change-header": "Files changed after a long time on %s (%s) for %s",
-            "file-change": "%s, %s days later"
+            "file-change": "%s, %s days later",
+            "tooltip-commits-per-developer": "%s commits/developer",
+            "tooltip-developers": "%s developers",
+            "tooltip-commits": "%s commits",
+            "tooltip-file-change": "%s files changed after a long time"
         }
     },
     "nl": {
@@ -44,7 +48,11 @@
             "weather-toggle": "Temperatuur",
             "no-data": "Geen data gevonden voor dit project.",
             "file-change-header": "Na lange tijd veranderde bestanden op %s (%s) voor %s",
-            "file-change": "%s, %s dagen later"
+            "file-change": "%s, %s dagen later",
+            "tooltip-commits-per-developer": "%s commits per developer",
+            "tooltip-developers": "%s developers",
+            "tooltip-commits": "%s commits",
+            "tooltip-file-change": "%s bestanden na lange tijd bewerkt"
         }
     }
 }
