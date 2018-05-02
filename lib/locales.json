@@ -24,7 +24,8 @@
             "tooltip-commits-per-developer": "%s commits/developer",
             "tooltip-developers": "%s developers",
             "tooltip-commits": "%s commits",
-            "tooltip-file-change": "%s files changed after a long time"
+            "tooltip-file-change": "%s files changed after a long time",
+            "temperature-unit": "%s °C"
         }
     },
     "nl": {
@@ -52,7 +53,8 @@
             "tooltip-commits-per-developer": "%s commits per developer",
             "tooltip-developers": "%s developers",
             "tooltip-commits": "%s commits",
-            "tooltip-file-change": "%s bestanden na lange tijd bewerkt"
+            "tooltip-file-change": "%s bestanden na lange tijd bewerkt",
+            "temperature-unit": "%s°C"
         }
     }
 }
