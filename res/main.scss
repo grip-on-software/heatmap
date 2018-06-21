@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    margin: 8px;
+    margin: 8px auto 8px auto;
 }
 
 #header {
@@ -29,6 +29,13 @@ body {
     margin-top: 60px;
     padding: 5px;
     color: #aaa;
+}
+
+#projectFilter label {
+    padding: .5em;
+}
+#projectFilter input {
+    margin-right: .25rem;
 }
 
 #dataPicker {
@@ -82,7 +89,6 @@ body {
 
 .project {
     width: 100%;
-    height: 340px;
     overflow: auto;
 }
 
