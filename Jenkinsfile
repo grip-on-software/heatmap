@@ -97,7 +97,6 @@ pipeline {
             }
             steps {
                 withCredentials([file(credentialsId: 'heatmap-config', variable: 'HEATMAP_CONFIGURATION')]) {
-                    sh 'cp $HEATMAP_CONFIGURATION config.json'
                     sh 'rm -rf public/data/'
                     sh 'mkdir -p public/'
                     sh 'mv output/ public/data/'
