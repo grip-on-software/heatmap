@@ -1,3 +1,5 @@
+@import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fontawesome";
+@import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-solid";
 @import "node_modules/bulma/bulma";
 
 body {
@@ -6,12 +8,11 @@ body {
 }
 
 .container {
-    margin: 8px auto 8px auto;
+    margin: 0 auto 0 auto;
 }
 
 #header {
-    padding: 8px;
-    margin-bottom: 20px;
+    padding: .75rem;
     border-bottom: 1px solid #eee;
 }
 
@@ -87,7 +88,11 @@ body {
  * SVG
  */
 
-.project {
+.icon {
+	margin-left: .75rem;
+}
+
+.dragscroll {
     width: 100%;
     overflow: auto;
 }

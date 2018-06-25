@@ -22,6 +22,7 @@
     "nyc": "^11.6.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@gros/visualization-ui": "^0.4.5",
     "axios": "^0.16.1",
     "bulma": "^0.6.2",
