@@ -1,6 +1,7 @@
 @import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fontawesome";
 @import "node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-solid";
 @import "node_modules/bulma/bulma";
+@import "node_modules/bulma-tooltip/dist/css/bulma-tooltip";
 
 body {
     margin: 0;
@@ -27,7 +28,7 @@ body {
 }
 
 #loading-spinner {
-	margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .no-data {
@@ -45,6 +46,10 @@ body {
 
 #dataPicker {
     margin-right: 20px;
+}
+
+.tabs {
+    overflow: visible;
 }
 
 .file-change-header {
@@ -65,8 +70,8 @@ body {
 }
 
 .file-change-repo img {
-	vertical-align: bottom;
-	padding-left: 8px;
+    vertical-align: bottom;
+    padding-left: 8px;
 }
 
 /*
@@ -74,26 +79,28 @@ body {
  */
 .data-button {
     min-width: 50px;
-    padding: 7px;
+    height: 100%;
+    padding: .375rem .75rem;
     background: #fff;
     border: 1px solid #ddd;
-	cursor: pointer;
+    cursor: pointer;
+
+    &:not(:first-child) { border-left: none; }
+    &:first-child { border-radius: 3px 0 0 3px; }
+    &:last-child { border-radius: 0 3px 3px 0; }
+    &:only-child { border-radius: 3px; }
+
+    &:not(:disabled):hover { background: #ccc; }
+
+    &.active { background: #ddd; }
 }
-.data-button:not(:first-child) { border-left: none; }
-.data-button:first-child { border-radius: 3px 0 0 3px; }
-.data-button:last-child { border-radius: 0 3px 3px 0; }
-.data-button:only-child { border-radius: 3px; }
-
-.data-button:not(:disabled):hover { background: #ccc; }
-
-.data-button.active { background: #ddd; }
 
 /*
  * SVG
  */
 
 .icon {
-	margin-left: .75rem;
+    margin-left: .75rem;
 }
 
 .dragscroll {
@@ -118,7 +125,7 @@ body {
 }
 
 .is-hidden {
-	display: none;
+    display: none;
 }
 
 #calendar .day-group {
@@ -133,7 +140,7 @@ body {
 /*
  * Tooltip
  */
-.tooltip {
+#tooltip {
     position: absolute;
     background: #fff;
     border: 3px solid #e7e7e7;
@@ -141,70 +148,79 @@ body {
     padding: .2rem 1rem;
     width: 15rem;
     line-height: 1.4rem;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -.65rem;
+        width: 1rem;
+        height: 1rem;
+        background: #fff;
+        border: 3px solid #e7e7e7;
+        border-width: 3px 0 0 3px;
+        transform: rotate(45deg);
+        z-index: 1;
+    }
+
+    &.left::before {
+        left: 1.65rem;
+    }
+
+    &.right::before {
+        right: 1.65rem;
+    }
+
+    .commit {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .avatar {
+        width: 5rem;
+        height: 5rem;
+        border-radius: .5rem;
+        margin-right: 1rem;
+        flex: 0 0 5rem;
+    }
+
+    .content {
+        flex: 1 0 0;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: .9rem;
+        color: #777;
+    }
+
+    dl {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+
+    dt {
+        float: left;
+        padding-right: 1rem;
+    }
+
+    dd {
+        font-weight: bold;
+    }
 }
 
-.tooltip::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -.65rem;
-    width: 1rem;
-    height: 1rem;
-    background: #fff;
-    border: 3px solid #e7e7e7;
-    border-width: 3px 0 0 3px;
-    transform: rotate(45deg);
-    z-index: 1;
-}
-
-.tooltip.left::before {
-    left: 1.65rem;
-}
-
-.tooltip.right::before {
-    right: 1.65rem;
-}
-
-.tooltip .commit {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.tooltip .avatar {
-    width: 5rem;
-    height: 5rem;
-    border-radius: .5rem;
-    margin-right: 1rem;
-    flex: 0 0 5rem;
-}
-
-.tooltip .content {
-    flex: 1 0 0;
-}
-
-.tooltip h3 {
-    font-size: 1rem;
-}
-
-.tooltip p {
-    font-size: .9rem;
-    color: #777;
-}
-
-.tooltip dl {
-	-moz-column-count: 2;
-	-webkit-column-count: 2;
-	column-count: 2;
-}
-
-.tooltip dt {
-	float: left;
-	padding-right: 1rem;
-}
-
-.tooltip dd {
-	font-weight: bold;
+.tooltip {
+	&::before, &::after {
+		transition: opacity .5s ease;
+		opacity: 0;
+      	content: '';
+		position: absolute;
+	}
 }
