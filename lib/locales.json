@@ -15,7 +15,7 @@
             "file-changes": "A heatmap of the number of files that were changed after a month of no activity for that file."
         },
         "messages": {
-            "title": "Heatmap %s",
+            "title": "Heatmap",
             "subtitle": "Event volume over time",
             "weather-toggle": "Temperature",
             "weather-toggle-enable-title": "Show temperature bars",
@@ -55,7 +55,7 @@
             "file-changes": "Een heatmap van het aantal bestanden die na meer dan een maand weer gewijzigd zijn."
         },
         "messages": {
-            "title": "Heatmap %s",
+            "title": "Heatmap",
             "subtitle": "Aantal gebeurtenissen over tijd",
             "weather-toggle": "Temperatuur",
             "weather-toggle-enable-title": "Temperatuurbalken tonen",
