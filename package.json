@@ -35,7 +35,7 @@
     "d3": "^5.9.2",
     "dragscroll": "0.0.8",
     "html-webpack-plugin": "^3.2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "mustache-loader": "^1.4.3",
     "webpack": "^4.35.0"
