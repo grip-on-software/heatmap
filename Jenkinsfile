@@ -49,7 +49,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.branch=$BRANCH_NAME'
+                    sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=heatmap:$BRANCH_NAME -Dsonar.projectName="Heatmap $BRANCH_NAME"'
                 }
             }
         }
