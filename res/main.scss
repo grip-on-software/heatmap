@@ -217,10 +217,16 @@ body {
 }
 
 .tooltip {
-	&::before, &::after {
-		transition: opacity .5s ease;
-		opacity: 0;
-      	content: '';
-		position: absolute;
-	}
+    &:not(:hover):not(.has-tooltip-active) {
+        &::before, &::after {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    &::before, &::after {
+        transition: opacity .5s ease;
+        opacity: 0;
+        content: '';
+        position: absolute;
+    }
 }
