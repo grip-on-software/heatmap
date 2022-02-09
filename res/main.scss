@@ -43,6 +43,15 @@ body {
     overflow: visible;
 }
 
+#projectPicker ul {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#projectFilter label {
+    display: flex;
+}
+
 .file-change-header {
     position: sticky;
     top: 5px;
