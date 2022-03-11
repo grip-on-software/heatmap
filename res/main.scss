@@ -138,7 +138,7 @@ body {
 }
 
 /*
- * Tooltip
+ * Tooltips (large ones with HTML content)
  */
 #tooltip {
     position: absolute;
@@ -171,20 +171,12 @@ body {
         right: 1.65rem;
     }
 
-    .commit {
+    .commitdate {
         position: relative;
         z-index: 2;
         display: flex;
         flex-direction: row;
         align-items: center;
-    }
-
-    .avatar {
-        width: 5rem;
-        height: 5rem;
-        border-radius: .5rem;
-        margin-right: 1rem;
-        flex: 0 0 5rem;
     }
 
     .content {
@@ -199,23 +191,11 @@ body {
         font-size: .9rem;
         color: #777;
     }
-
-    dl {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-
-    dt {
-        float: left;
-        padding-right: 1rem;
-    }
-
-    dd {
-        font-weight: bold;
-    }
 }
 
+/*
+ * Tooltips (small textual ones based on bulma-tooltip)
+ */
 .tooltip {
     &:not(:hover):not(.has-tooltip-active) {
         &::before, &::after {
