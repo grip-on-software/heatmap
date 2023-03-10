@@ -28,28 +28,35 @@ body {
     color: #aaa;
 }
 
-#projectFilter label {
-    padding: .5em;
-}
-#projectFilter input {
-    margin-right: .25rem;
+#projectFilter {
+    label {
+        padding: .5em;
+    }
+    input {
+        margin-right: .25rem;
+    }
 }
 
 #dataPicker {
     margin-right: 20px;
+
+    .is-disabled {
+        opacity: 0.5;
+    }
 }
 
 .tabs {
     overflow: visible;
 }
 
-#projectPicker ul {
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-#projectFilter label {
-    display: flex;
+#projectPicker {
+    ul {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    label {
+        display: flex;
+    }
 }
 
 .file-change-header {
@@ -64,14 +71,13 @@ body {
 .file-change-repo {
     font-weight: 600;
     cursor: pointer;
-}
-.file-change-repo:hover {
-    color: #aaa;
-}
-
-.file-change-repo img {
-    vertical-align: bottom;
-    padding-left: 8px;
+    &:hover {
+        color: #aaa;
+    }
+    img {
+        vertical-align: bottom;
+        padding-left: 8px;
+    }
 }
 
 /*

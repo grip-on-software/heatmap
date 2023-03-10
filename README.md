@@ -1,7 +1,10 @@
 # Heatmap
 
 This visualization produces a calendar of project activity over time, similar 
-to developer activity overviews in GitHub and GitLab.
+to developer activity overviews in GitHub and GitLab. This includes statistics 
+per day on number of commits, commits per developer, temperature, and changes 
+to file that have not been changed since a long time. Some statistics are 
+optional.
 
 ## Configuration
 
@@ -13,7 +16,9 @@ settings in that file. The following configuration items are known:
   visualizations and the heatmap are hosted on the same domain (for example in 
   a development environment). The remainder is a path to the root of the 
   visualizations, where the dashboard is found and every other visualization 
-  has sub-paths below it.
+  has sub-paths below it. The URL may contain the `$organization` variable, 
+  which is replaced by the `$VISUALIZATION_ORGANIZATION` environment variable 
+  upon compilation.
 - `path`: The relative path at which the heatmap is made available on the 
   server. This can remain the default `.` to work just fine.
 
@@ -33,6 +38,11 @@ temperature values (assumed to be in degrees Celsius by the locale). If the
 `weather.json` file is not available, then turning on temperature bars is 
 disabled in the visualization. The entire data collection must be placed in the 
 `public/data` directory.
+
+Aside from the two analysis reports mentioned above, the `long_waiting_commits` 
+report should also provide per-project JSON files within a subdirectory of the 
+same name, unless the `$VISUALIZATION_ANONYMIZED` environment variable is set 
+to `true`. In that case, the option to view file changes is disabled.
 
 ## Running
 

@@ -17,6 +17,7 @@
  * limitations under the License.
  */
 const fs = require('fs'),
+      _ = require('lodash'),
       path = require('path'),
       mix = require('laravel-mix'),
       HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -29,7 +30,20 @@ if (!fs.existsSync(config)) {
     config = path.resolve(__dirname, 'lib/config.json');
 }
 
-const configuration = JSON.parse(fs.readFileSync(config));
+const configuration = _.mapValues(JSON.parse(fs.readFileSync(config)),
+    value => {
+        if (!_.isString(value)) {
+            return value;
+        }
+        return value.replace(/(\/?)\$organization/,
+            typeof process.env.VISUALIZATION_ORGANIZATION !== 'undefined' ?
+            "$1" + process.env.VISUALIZATION_ORGANIZATION : ''
+        );
+    }
+);
+configuration.anonymized = process.env.VISUALIZATION_ANONYMIZED === "true";
+const configAlias = path.resolve(__dirname, 'config-alias.json');
+fs.writeFileSync(configAlias, JSON.stringify(configuration));
 
 Mix.paths.setRootPath(__dirname);
 mix.setPublicPath('public/')
@@ -74,7 +88,7 @@ mix.setPublicPath('public/')
         ],
         resolve: {
             alias: {
-                'config.json$': config
+                'config.json$': configAlias
             }
         }
     });

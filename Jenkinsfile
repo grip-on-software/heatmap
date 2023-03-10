@@ -76,7 +76,7 @@ pipeline {
             }
             steps {
                 withCredentials([file(credentialsId: 'data-analysis-config', variable: 'ANALYSIS_CONFIGURATION')]) {
-                    sh '/bin/bash -c "rm -rf $PWD/output && mkdir $PWD/output && cd /home/docker && Rscript report.r --report \'^commit_volume$|^developers$\' $REPORT_PARAMS --project-sources vcs --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output && Rscript weather.r --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output"'
+                    sh '/bin/bash -cex "rm -rf $PWD/output; mkdir $PWD/output; cd /home/docker; Rscript report.r --report \'^commit_volume$|^developers$\' $REPORT_PARAMS --project-sources vcs --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output; if [ -z $VISUALIZATION_ANONYMIZED ]; then Rscript report.r --report long_waiting_commits $REPORT_PARAMS --project-sources vcs --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output; fi; Rscript weather.r --log INFO --config $ANALYSIS_CONFIGURATION --output $PWD/output"'
                 }
             }
         }
